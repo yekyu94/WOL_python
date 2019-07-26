@@ -12,7 +12,7 @@ class LayoutWindow(QMainWindow):
         self.statusBar().showMessage('Youngq.tistory.com')
 
         self.setWindowTitle('WOL Program')
-        self.setWindowIcon(QIcon('web.png'))
+        self.setWindowIcon(QIcon('./img/web.png'))
         self.setGeometry(500, 500, 350, 180)
         self.show()
 
@@ -26,7 +26,7 @@ class WidgetSet(QWidget):
         hbox0 = QHBoxLayout()
         hbox0.setAlignment(Qt.AlignVCenter)
 
-        pixmap = QPixmap('wol_mini.png')
+        pixmap = QPixmap('./img/wol_mini.png')
         pixmap = pixmap.scaledToWidth(35)
         lbl_img = QLabel()
         lbl_img.setPixmap(pixmap)
