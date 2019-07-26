@@ -54,7 +54,7 @@ class WidgetSet(QWidget):
         cIP = QLabel()
         cIP.setFixedSize(110, 30)
         currentIP = self.ipaddr()
-        cIP.setText("사설 IP : "+currentIP)
+        cIP.setText("IP : "+currentIP)
         hbox1.addWidget(cIP)
 
         # Line 3 : 맥주소 입력 + 전송버튼
