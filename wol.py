@@ -53,8 +53,8 @@ class WidgetSet(QWidget):
 
         cIP = QLabel()
         cIP.setFixedSize(110, 30)
-        currentIP = socket.gethostbyname(socket.getfqdn())
-        cIP.setText("IP : "+currentIP)
+        currentIP = self.ipaddr()
+        cIP.setText("사설 IP : "+currentIP)
         hbox1.addWidget(cIP)
 
         # Line 3 : 맥주소 입력 + 전송버튼
@@ -87,6 +87,11 @@ class WidgetSet(QWidget):
             self.err.setText("신호 전송완료")
         except:
             self.err.setText("잘못된 입력이 존재합니다.")
+
+    def ipaddr(self):
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        return s.getsockname()[0]
 
 def WOL(macAddr, network):
     sep = macAddr[2]
